@@ -23,6 +23,8 @@ int main() {
         printf("\n");
     }
 
+
+    //print the lower end of the hour glass which is not hollow
     for(int x=1; x<=rows-1;x++){
         for(int y=0; y<((rows-1)-x);y++){
             printf(" ");
