@@ -2,6 +2,7 @@
 #include<stdlib.h>
 
 int main(){
+    //skeleton of a node
     typedef struct node{
         int val;
         struct node* next;
@@ -46,5 +47,25 @@ int main(){
             count++;
             temp = temp->next;                                    
     }
-    printf("Number of nodes in the linked list are: %d",count);
+    printf("Number of nodes in the linked list are: %d\n",count);
+
+
+
+    //Creating a node that can be added at the starting of the linked list
+    node* nodeAtStart = (node*)malloc(sizeof(node));
+    nodeAtStart->val = 899;
+    nodeAtStart -> next = head;
+    head = nodeAtStart;
+
+
+    //Printing the entire linked list again
+    temp = head;
+    while(temp != NULL){
+        printf("%d --> ",temp->val);
+        temp = temp->next;                                     /* for 1st itr, since temp points to same node that head also points to. So temp = 
+                                                                  temp-> next is equivalent to temp=head->next */
+    }
+
+
+
 }
