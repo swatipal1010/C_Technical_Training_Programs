@@ -6,7 +6,4 @@ int main(){
 
     int *aptr = a;
     int *bptr = b;
-
-    
-
 }
