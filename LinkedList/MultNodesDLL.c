@@ -20,6 +20,21 @@ int main(){
 
     head->next = newNode;
 
-    printf("head->next node contains the value: %d",head->next->val);
+    printf("head->next node contains the value: %d\n",head->next->val);
+
+    node* temp = head;
+    printf("Values stored in the linked list: ");
+    while(temp != NULL){
+        printf("%d-->",temp->val);
+        temp = temp->next;
+    }
+
+    //free dynamically created nodes
+    temp = head;
+    while(temp!=NULL){
+        node* nextPtr = temp->next;
+        free(temp);
+        temp = nextPtr;
+    }
 
 }
