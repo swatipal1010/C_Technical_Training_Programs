@@ -29,7 +29,7 @@ int main(){
                                                     pointed by the 'temp' pointer */
 
     printf("%p\n",temp);                            //address pointed by the 'temp' pointer
-    printf("%p\n",head->next);                      //address of node, pointed by the pointer of the node to which heads points to 
+    printf("%p\n",head->next);                      //address of node, pointed by the pointer (next) of the node to which heads points to 
 
 
     // Add more nodes to the linked list
@@ -39,17 +39,22 @@ int main(){
         current = current->next;                   /* We store the address that current->next points to, in current pointer i.e. current points to 
                                                     the address current->next points to */
     }
+    //Finally, current pointer points to the last node of the linked list
 
+
+    //Creating another new node
     node* newNode = (node*)malloc(sizeof(node));
     newNode->next = NULL;
     newNode->val = 6;
 
-    current->next = newNode;
-    printf("%d\n",current->next->val);
-    printf("%d \n",newNode->val);
 
-    printf("%p\n",current->next);
-    printf("%p\n",newNode);
+    //Since 'current' pointer points to the last node of the LL, we link that last node to the 'newNode'. Thus, 'newNode' is inserted at the tail of LL
+    current->next = newNode;
+    printf("%d\n",current->next->val);          //OUTPUT : 6
+    printf("%d \n",newNode->val);               //OUTPUT : 6
+
+    printf("%p\n",current->next);               //Address of last node i.e. 'newNode'
+    printf("%p\n",newNode);                     //Address of last node i.e. 'newNode'
 
 
     printf("Linked list obtained so far: %d --> %d --> %d",head->val, temp->val,newNode->val);

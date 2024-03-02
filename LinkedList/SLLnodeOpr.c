@@ -1,6 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+/*Operations performed: 
+1. Creation of nodes in LL
+2. Printing the values stored in LL
+3. Count the number of nodes in LL
+4. Insertion of node at the beginning of the node
+*/
+
 int main(){
     //skeleton of a node
     typedef struct node{
@@ -65,7 +72,4 @@ int main(){
         temp = temp->next;                                     /* for 1st itr, since temp points to same node that head also points to. So temp = 
                                                                   temp-> next is equivalent to temp=head->next */
     }
-
-
-
 }

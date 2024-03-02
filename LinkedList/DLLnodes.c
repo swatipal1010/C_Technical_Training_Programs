@@ -28,6 +28,7 @@ int main(){
         node* newNode = (node*)malloc(sizeof(node));
         printf("Enter the value for the node%d : ",i+1);
         scanf("%d",&(newNode->val));
+        //temp->prev = NULL;
         newNode->next = NULL;
         temp->next = newNode;
         temp = newNode;

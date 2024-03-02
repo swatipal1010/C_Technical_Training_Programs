@@ -8,6 +8,7 @@ int main(){
         struct node* next;
     }node;
 
+    //Creating head node
     node* head = (node*)malloc(sizeof(node));
     head->val = 1;
     head->next = NULL;   
@@ -26,6 +27,7 @@ int main(){
     //printf("Address of node that temp is pointing to after it becomes head node: %p\n",temp->next);
 
     head = temp;                                                //heads also points to the same node that temp points to
+    printf("Address of the head is now address of the temp node: %p\n", head);
     printf("head->next is now address of old head node: %p\n", head->next);
 
 }

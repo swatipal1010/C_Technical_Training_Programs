@@ -18,6 +18,8 @@ int main(){
     newNode->prev = head;
     newNode->next = NULL;
 
+
+    //Connecting head node with the newNode created
     head->next = newNode;
 
     printf("head->next node contains the value: %d\n",head->next->val);
