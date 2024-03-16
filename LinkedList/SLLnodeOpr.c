@@ -72,4 +72,13 @@ int main(){
         temp = temp->next;                                     /* for 1st itr, since temp points to same node that head also points to. So temp = 
                                                                   temp-> next is equivalent to temp=head->next */
     }
+
+
+    // Free dynamically allocated memory
+    temp = head;
+    while(temp != NULL){
+        node* nextNode = temp->next;
+        free(temp);
+        temp = nextNode;
+    }
 }

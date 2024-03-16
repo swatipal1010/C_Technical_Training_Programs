@@ -1,15 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 int main(){
     typedef struct node{
         int val;
         struct node* next;
     }node;
 
-    //Creating the first node 'head'
     node* head = (node*)malloc(sizeof(node));
-    head->next = NULL;
-
 
     int num ;
     printf("Enter the number of nodes: ");
@@ -27,28 +25,20 @@ int main(){
         temp->next = newNode;                                   // Link the new node to the list
         temp = newNode;                                         // Move the temp pointer to the newly created node
     }
+    
+    node* lastNode = (node*)malloc(sizeof(node));
+    temp->next = lastNode;
+    lastNode->next = NULL;
+    printf("Enter the value in the last node: ");
+    scanf("%d",&(lastNode->val));
 
-    //printing node
+    // Update temp pointer to point to the last node
+    temp = lastNode;
+
+    //printing the entire LL
     temp = head;
-    for(int i=0; i<num;i++){
+    while(temp!=NULL){
         printf("%d --> ",temp->val);
-        temp = temp->next;
-    }
-    printf("\n");
-
-
-    //printing nodes
-    /* temp = head;
-     while(temp != NULL){
-         printf("%d --> ",temp->val);       //for 1st itr, since temp points to same node that head also points to temp->next is eq to head->next
-         temp = temp->next;                                      
-     } */
-
-
-    //printing nodes
-    temp = head;
-    while(temp->next != NULL){
-        printf("%d --> ", temp->val);
         temp = temp->next;
     }
 
@@ -59,6 +49,4 @@ int main(){
         free(temp);
         temp = nextNode;
     }
-    
-    return 0;
 }

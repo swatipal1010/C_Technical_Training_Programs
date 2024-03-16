@@ -62,5 +62,13 @@ int main(){
         printf("%d --> ",temp->val);
         temp = temp->next;
     }
+
+    // Free dynamically allocated memory
+    temp = head;
+    while(temp != NULL){
+        node* nextNode = temp->next;
+        free(temp);
+        temp = nextNode;
+    }
     return 0;
 }
