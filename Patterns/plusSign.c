@@ -3,8 +3,12 @@
 int main(){
     int n;
     printf("Enter the value of n: ");
-    scanf("%d",&n);
+    scanf("%d",&n);                             //n is the number of that row that has horizontal line of stars
 
+if(n%2==0){
+    printf("Value of n must be odd");
+}
+else{
     for(int i=1; i<=n;i++){
         for(int j=1;j<=n;j++){
             //to print the long horizontal line of stars
@@ -34,4 +38,6 @@ int main(){
         printf("*");
         printf("\n");
     }
+}
+    
 }
