@@ -25,4 +25,16 @@ int main(){
         }
         printf("\n");
     }
+
+//Triangle of characters
+    for(int i=0; i<rows; i++){
+        char a = 65;
+        for(int j=0; j<rows-1-i; j++){          //Loop to print the spaces before star(s)
+            printf(" ");
+        }
+        for(int k=0; k<i+1; k++){              //Loop to print the stars
+            printf("%c",a++);
+        }
+        printf("\n");
+    }
 }
